@@ -3,6 +3,20 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
 
+//Like a switch for the game; we only call nextSequence() on the first keypress.
+var started = false;
+
+//Tracker
+var level = 0;
+$(document).keypress(function () {
+  if (!started) {
+    //Let's change the DOM to level-0
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
+
 $(".btn").click(function () {
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
@@ -13,6 +27,9 @@ $(".btn").click(function () {
 });
 
 function nextSequence() {
+  //Every time nextSequence is called, we increment the level by 1
+  level++;
+  $("#text-title").text("Level " + level);
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
