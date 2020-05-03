@@ -48,6 +48,7 @@ function checkAnswer(currentLevel) {
 }
 
 function nextSequence() {
+  userClickedPattern = [];
   //Every time nextSequence is called, we increment the level by 1
   level++;
   $("#text-title").text("Level " + level);
@@ -76,4 +77,10 @@ function animatePress(currentColor) {
   setTimeout(function () {
     $("#" + currentColor).removeClass("pressed");
   }, 100);
+}
+
+function startOver() {
+  level = 0;
+  gamePattern = [];
+  started = false;
 }
