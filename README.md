@@ -7,5 +7,7 @@ Simon Game using mostly JQuery Library
 
 JavaScript produces random sequence of colors and user test his/her memory by clicking on the buttons, following the patterns and levelling up. 
 
+Please feel free to add any comment, contribute on open-source and contact me at bilalsarimeseli@gmail.com
+
 
 
