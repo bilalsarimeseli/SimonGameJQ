@@ -9,6 +9,7 @@ $(".btn").click(function () {
 
   // When a user clicks on a button, the corresponding sound plays.
   playSound(userChosenColour);
+  animatePress(userChosenColour);
 });
 
 function nextSequence() {
@@ -30,4 +31,11 @@ function playSound(name) {
   //The code that plays sound in the nextSequence() function is added to playSound().
   var audio = new Audio("sounds/" + name + ".mp3");
   audio.play();
+}
+
+function animatePress(currentColor) {
+  $("#" + currentColor).addClass("pressed");
+  setTimeout(function () {
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
 }
